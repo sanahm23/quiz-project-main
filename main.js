@@ -43,8 +43,7 @@ formSubmit.addEventListener("submit", function (event) {
   }
 
   let username = usernameInput.value;
-  let email = userEmail.value;
-
+ 
   userDisplay.textContent = username;
   box.style.display = "none";
   boxQuiz.style.display = "block";
