@@ -15,7 +15,9 @@ body {
   box-shadow: 5px 10px #888888;
 }
 
-
+#box-quiz{
+  display: none;
+}
 form input {
   display: inline-flex;
   font-family: "Roboto", sans-serif;

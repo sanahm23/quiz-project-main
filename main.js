@@ -43,7 +43,7 @@ formSubmit.addEventListener("submit", function (event) {
   }
 
   let username = usernameInput.value;
- 
+
   userDisplay.textContent = username;
   box.style.display = "none";
   boxQuiz.style.display = "block";
@@ -60,9 +60,9 @@ function loadQuestion() {
   let choiceElements = document.getElementsByTagName("span");
 
   questionElement.textContent = questions[currentQuestion].question;
-  var previousAnswer = userChoices[currentQuestion];
+  let previousAnswer = userChoices[currentQuestion];
   if (previousAnswer !== undefined) {
-    var choices = document.getElementsByName("choice");
+    let choices = document.getElementsByName("choice");
     choices[previousAnswer].checked = true;
   }
 
@@ -90,7 +90,6 @@ submit.addEventListener("click", () => {
     }
   }
 
-
   if (selectedChoice == -1) {
     alert("Please select an option.");
     return;
@@ -99,12 +98,10 @@ submit.addEventListener("click", () => {
   if (selectedChoice == questions[currentQuestion].answer) {
     score++;
 
-
   }
   userChoices[currentQuestion] = selectedChoice;
 
   currentQuestion++;
-
 
   if (currentQuestion === questions.length) {
     let email = userEmail.value
@@ -117,11 +114,7 @@ submit.addEventListener("click", () => {
 
   for (let i = 0; i < choices.length; i++) {
     choices[i].checked = false
-   
-
   }
-
-
 });
 
 function showPreviousQuestion() {
@@ -129,7 +122,7 @@ function showPreviousQuestion() {
   loadQuestion();
 }
 if (currentQuestion === questions.length) {
-  
+
 
   quiz.innerHTML = `<h2>You answered ${score} out of ${questions.length} correctly</h2>
     <button onclick = "location.reload()">Reload</button>`
